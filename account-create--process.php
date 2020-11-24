@@ -1,6 +1,15 @@
 <?php
 
   $userNom = $_POST["user-nom"] ?? false;
+  $userNom = $_POST["user-nom"] ?? false;
+  $userPrenom = $_POST["user-prenom"] ?? false;
+  $userAdresse = $_POST["user-adresse"] ?? false;
+  $userCP = $_POST["user-cp"] ?? false;
+  $userVille = $_POST["user-ville"] ?? false;
+  $userPays = $_POST["user-pays"] ?? false;
+  $userTel = $_POST["user-tel"] ?? false;
+  $userLogin = $_POST["user-login"] ?? false;
+  $userPwd = $_POST["user-password"] ?? false;
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -15,14 +24,14 @@
     <p>Bien le bonjour, je suis le fichier <code>account-create--process.php</code> et voici les valeurs que je viens tout juste de recevoir par la méthode <code>POST</code>:</p>
     <ul>
       <li>Nom : <?php echo $userNom; ?></li>
-      <li>Prénom :</li>
-      <li>Adresse :</li>
-      <li>Code postal :</li>
-      <li>Ville :</li>
-      <li>Pays :</li>
-      <li>Téléphone :</li>
-      <li>Adresse électronique :</li>
-      <li>Mot de passe :</li>
+      <li>Prénom : <?php echo $userPrenom; ?></li>
+      <li>Adresse : <?php echo $userAdresse; ?></li>
+      <li>Code postal : <?php echo $userCP; ?></li>
+      <li>Ville : <?php echo $userVille; ?></li>
+      <li>Pays : <?php echo $userPays; ?></li>
+      <li>Téléphone : <?php echo $userTel; ?></li>
+      <li>Adresse électronique : <?php echo $userLogin; ?></li>
+      <li>Mot de passe : <?php echo $userPwd; ?></li>
     </ul>
   </main>
 </body>
