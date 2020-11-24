@@ -10,6 +10,43 @@
   $userTel = $_POST["user-tel"] ?? false;
   $userLogin = $_POST["user-login"] ?? false;
   $userPwd = $_POST["user-password"] ?? false;
+  $mail = $userLogin;
+  $sujet = "Confirmation création du compte";
+   // message
+   $message = "
+   <html>
+    <head>
+     <title>Confirmation création de votre compte client</title>
+     <style>
+        table{
+            border: solid 2px black;
+        }
+        td{
+            border: solid 2px black;
+        }
+     </style>
+    </head>
+    <body>
+     <table>
+      <tr>
+       <td>Envoyé par</td><td>Alain Ackerman ne-pas-repondre@alainackerman.com</td>
+      </tr>
+      <tr>
+       <td>Sujet</td><td>Confirmation création de votre compte client</td>
+      </tr>
+      <tr>
+       <td>Message</td><td>Bonjour <?php echo $userNom; ?> <?php echo $userPrenom; ?><br><br>Nous vous remercions d avoir créé votre compte client et vous souhaitons la bienvenue sur le site d’Alain Ackerman !<br><br>Vos données de connexion vous permettent d accéder à l’intégralité du site. Vous pouvez à tout moment gérer les données de votre compte (https://alainackerman.com/account).<br><br>Meilleures salutations<br>L’équipe du site Alain Ackerman</td>
+      </tr>
+     </table>
+    </body>
+   </html>";
+
+   // Pour envoyer un mail HTML, l'en-tête Content-type doit être défini
+   $headers[] = "MIME-Version: 1.0";
+   $headers[] = "Content-type: text/html; charset=iso-8859-1";
+
+   // Envoi
+   mail($mail, $sujet, $message, implode("\r\n", $headers));
 
 ?><!DOCTYPE html>
 <html lang="en">
